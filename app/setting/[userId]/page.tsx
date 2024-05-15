@@ -14,7 +14,7 @@ const Page = ({ params }: { params: Params }) => {
   const [formValues, setFormValues] = useState({
     name: "",
     bio: "",
-    imageFile: "",
+    imageFile: null as File | null,
   });
   const [imagePreview, setImagePreview] = useState("");
 
@@ -31,7 +31,7 @@ const Page = ({ params }: { params: Params }) => {
       setFormValues({
         name: username || "",
         bio: profile?.bio || "",
-        imageFile: "",
+        imageFile: null,
       });
       setImagePreview(profile?.profileImageUrl || "");
       setLoading(false);
