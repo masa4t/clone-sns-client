@@ -70,7 +70,7 @@ const Page = ({ params }: { params: Params }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASEURL}/profile/update/${userId}`,
+        `${process.env.NEXT_PUBLIC_API_BASEURL}/api/profile/update/${userId}`,
         {
           method: "PUT",
           body: formData,
