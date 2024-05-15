@@ -46,7 +46,7 @@ const Page = ({ params }: { params: Params }) => {
     }));
   };
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLImageElement>) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files[0];
     if (file) {
       setFormValues((prevFormValues) => ({
