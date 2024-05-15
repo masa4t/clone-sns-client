@@ -123,7 +123,7 @@ const Page = ({ params }: { params: Params }) => {
             <img
               className="w-40 h-40 rounded-full mb-4 cursor-pointer"
               alt="User Avatar"
-              // name="image"
+              name="image"
               src={imagePreview}
             />
           </label>
