@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  // 全ての API routes にマッチ
+  eactStrictMode: true,
+  // ⬇追加
   async headers() {
     return [
       {
-        source: "/api/:path*",
+        source: "/(.*)",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
