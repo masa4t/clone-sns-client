@@ -45,7 +45,7 @@ const Userpage = async ({ params }: { params: Params }) => {
               <img
                 className="w-20 h-20 rounded-full mr-4"
                 alt="User Avatar"
-                src={profile?.profileImageUrl}
+                src={profile?.profileImageUrl || ""}
               />
               <div>
                 <h2 className="text-2xl font-semibold mb-1">
@@ -72,7 +72,7 @@ const Userpage = async ({ params }: { params: Params }) => {
                 <img
                   className="w-10 h-10 rounded-full mr-2"
                   alt="User Avatar"
-                  src={profile?.profileImageUrl}
+                  src={profile?.profileImageUrl || ""}
                 />
                 <div>
                   <h2 className="font-semibold text-md">
