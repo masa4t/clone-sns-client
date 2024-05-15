@@ -29,13 +29,11 @@ const Navbar = () => {
                   プロフィール
                 </Link>
                 <Link href={`/setting/${user.id}`}>
-                  {user?.profile.profileImageUrl && (
-                    <img
-                      className="w-10 h-10 rounded-full mr-2 absolute top-4 right-10"
-                      src={user.profile.profileImageUrl}
-                      alt="User Avatar"
-                    />
-                  )}
+                  <img
+                    className="w-10 h-10 rounded-full mr-2 absolute top-4 right-10"
+                    src={user?.profile.profileImageUrl || ""}
+                    alt="User Avatar"
+                  />
                 </Link>
               </>
             ) : (
