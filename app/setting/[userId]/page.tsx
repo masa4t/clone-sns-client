@@ -14,7 +14,7 @@ const Page = ({ params }: { params: Params }) => {
   const [formValues, setFormValues] = useState({
     name: "",
     bio: "",
-    imageFile: null,
+    imageFile: "",
   });
   const [imagePreview, setImagePreview] = useState("");
 
