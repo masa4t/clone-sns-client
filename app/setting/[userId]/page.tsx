@@ -9,12 +9,12 @@ const Page = ({ params }: { params: Params }) => {
   const [userData, setUserData] = useState({
     name: "",
     bio: "",
-    imageFile: "",
+    image: "",
   });
   const [formValues, setFormValues] = useState({
     name: "",
     bio: "",
-    imageFile: null as File | null,
+    image: null as File | null,
   });
   const [imagePreview, setImagePreview] = useState("");
 
@@ -26,12 +26,12 @@ const Page = ({ params }: { params: Params }) => {
       setUserData({
         name: username || "",
         bio: profile?.bio || "",
-        imageFile: profile?.profileImageUrl || "",
+        image: profile?.profileImageUrl || "",
       });
       setFormValues({
         name: username || "",
         bio: profile?.bio || "",
-        imageFile: null,
+        image: null,
       });
       setImagePreview(profile?.profileImageUrl || "");
       setLoading(false);
@@ -51,7 +51,7 @@ const Page = ({ params }: { params: Params }) => {
     if (file) {
       setFormValues((prevFormValues) => ({
         ...prevFormValues,
-        imageFile: file,
+        image: file,
       }));
       setImagePreview(URL.createObjectURL(file));
     }
@@ -62,8 +62,8 @@ const Page = ({ params }: { params: Params }) => {
     const formData = new FormData();
     formData.append("name", formValues.name);
     formData.append("bio", formValues.bio);
-    if (formValues.imageFile) {
-      formData.append("image", formValues.imageFile);
+    if (formValues.image) {
+      formData.append("image", formValues.image);
     }
 
     const userId = user?.id;
@@ -82,7 +82,7 @@ const Page = ({ params }: { params: Params }) => {
         setUserData({
           name: result.username,
           bio: result.profile?.bio || "",
-          imageFile: result.profile?.profileImageUrl || "",
+          image: result.profile?.profileImageUrl || "",
         });
         setImagePreview(result.profile?.profileImageUrl || "");
 
@@ -123,14 +123,14 @@ const Page = ({ params }: { params: Params }) => {
             <img
               className="w-40 h-40 rounded-full mb-4 cursor-pointer"
               alt="User Avatar"
-              name="image"
+              // name="image"
               src={imagePreview}
             />
           </label>
           <input
             id="fileInput"
             type="file"
-            name="imageFile"
+            name="image"
             accept="image/*"
             style={{ display: "none" }}
             ref={fileInputRef}
