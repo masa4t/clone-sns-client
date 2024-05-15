@@ -31,7 +31,7 @@ const Page = ({ params }: { params: Params }) => {
       setFormValues({
         name: username || "",
         bio: profile?.bio || "",
-        imageFile: null,
+        imageFile: "",
       });
       setImagePreview(profile?.profileImageUrl || "");
       setLoading(false);
